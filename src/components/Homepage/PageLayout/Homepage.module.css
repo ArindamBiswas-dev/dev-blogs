@@ -1,0 +1,10 @@
+.tagLink {
+  padding: 5px 9px;
+  color: black;
+  border-radius: 5px;
+}
+
+.tagLink:hover {
+  color: blue;
+  background-color: #e5e9ec;
+}

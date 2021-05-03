@@ -5,7 +5,15 @@ import NavbarSection2 from './NavbarSection2';
 
 function Navbar() {
   return (
-    <Flex justify="center" boxShadow="0 1px 0 #CBD5E0">
+    <Flex
+      justify="center"
+      backgroundColor="white"
+      boxShadow="0 1px 0 #CBD5E0"
+      position="sticky"
+      top="0"
+      zIndex="1000"
+      height="65px"
+    >
       <Flex
         py="2.5"
         w="100%"
