@@ -8,3 +8,19 @@
   color: blue;
   background-color: #e5e9ec;
 }
+
+.postNav {
+  padding: 4px 8px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.postNav:hover {
+  color: blue;
+  background-color: rgb(215, 215, 250);
+}
+
+.currentPostNav {
+  color: blue;
+  background-color: rgb(215, 215, 250);
+}
