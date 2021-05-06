@@ -98,7 +98,7 @@ function Post(props) {
                         </Text>
                       </Flex>
                     </HStack>
-                    <Flex max>
+                    <Flex>
                       <Button size="sm" colorScheme="twitter">
                         Save
                       </Button>

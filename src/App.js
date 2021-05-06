@@ -6,18 +6,23 @@ import Month from './components/Homepage/Month/Month';
 import Year from './components/Homepage/Year/Year';
 import TopInfinity from './components/Homepage/Infinity/TopInfinity';
 import Latest from './components/Homepage/Latest/Latest';
+import Layout from './components/global/Layout';
+import ReadingList from './components/Reading List/ReadingList';
 
 function App() {
   return (
     <div className="App">
-      <Switch>
-        <Route exact path="/" component={Feed} />
-        <Route exact path="/top/week" component={Week} />
-        <Route exact path="/top/month" component={Month} />
-        <Route exact path="/top/year" component={Year} />
-        <Route exact path="/top/infinity" component={TopInfinity} />
-        <Route exact path="/latest" component={Latest} />
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route exact={true} path="/" component={Feed} />
+          <Route exact={true} path="/top/week" component={Week} />
+          <Route exact={true} path="/top/month" component={Month} />
+          <Route exact={true} path="/top/year" component={Year} />
+          <Route exact={true} path="/top/infinity" component={TopInfinity} />
+          <Route exact={true} path="/latest" component={Latest} />
+          <Route exact={true} path="/readinglist" component={ReadingList} />
+        </Switch>
+      </Layout>
     </div>
   );
 }
