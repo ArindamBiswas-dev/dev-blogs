@@ -8,6 +8,7 @@ import TopInfinity from './components/Homepage/Infinity/TopInfinity';
 import Latest from './components/Homepage/Latest/Latest';
 import Layout from './components/global/Layout';
 import ReadingList from './components/Reading List/ReadingList';
+import Profile from './components/Profile/Profile';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact={true} path="/top/infinity" component={TopInfinity} />
           <Route exact={true} path="/latest" component={Latest} />
           <Route exact={true} path="/readinglist" component={ReadingList} />
+          <Route exact={true} path="/:id" component={Profile} />
         </Switch>
       </Layout>
     </div>
