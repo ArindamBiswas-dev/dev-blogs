@@ -4,7 +4,7 @@ import { useDisclosure } from '@chakra-ui/hooks';
 import { Box, Divider, Flex, Heading, Text } from '@chakra-ui/layout';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DeleteAlert from './DeleteAlert';
+import DeleteAlert from '../global/DeleteAlert';
 
 function ListItem() {
   const { isOpen, onOpen, onClose } = useDisclosure();

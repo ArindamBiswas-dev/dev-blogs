@@ -9,8 +9,10 @@ import {
 } from '@chakra-ui/modal';
 import React from 'react';
 
+//TODO: targetId & excecuteFunction pass by parent element & excecute when click on "Yes" button
+
 function DeleteAlert(props) {
-  const { cancelRef, onClose, isOpen } = props;
+  const { cancelRef, onClose, isOpen, excecuteFunction, targetId } = props;
   return (
     <AlertDialog
       motionPreset="slideInBottom"
@@ -25,7 +27,9 @@ function DeleteAlert(props) {
         <AlertDialogHeader color="red" textAlign="center">
           Delete Item
         </AlertDialogHeader>
-        <AlertDialogBody>Are you sure to delete this item?</AlertDialogBody>
+        <AlertDialogBody>
+          Are you sure to delete this item {targetId} ?
+        </AlertDialogBody>
         <AlertDialogFooter>
           <Button ref={cancelRef} onClick={onClose}>
             No

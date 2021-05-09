@@ -10,8 +10,15 @@ import { Button, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
 
 function Post(props) {
   const fakeTags = ['webdev', 'javascript', 'react', 'sql'];
-  const [isFakeLoading, setLoading] = useState(false);
-  const isFirst = props.isFirst;
+  const [isFakeLoading, setLoading] = useState(!false);
+  const { isFirst, isOwnProfile, onDeleteClick, setTargetId, fakeId } = props;
+
+  // on delete click set the target id and call the alert modal
+  const onDelHandelCilick = () => {
+    setTargetId(fakeId);
+    onDeleteClick();
+  };
+
   return (
     <Box
       w="100%"
@@ -19,6 +26,8 @@ function Post(props) {
       overflow="hidden"
       bgColor="white"
       cursor="pointer"
+      borderWidth="1px"
+      borderColor="gray.300"
     >
       {isFirst && (
         <Image
@@ -99,9 +108,25 @@ function Post(props) {
                       </Flex>
                     </HStack>
                     <Flex>
-                      <Button size="sm" colorScheme="twitter">
-                        Save
-                      </Button>
+                      {!isOwnProfile && (
+                        <Button size="sm" colorScheme="twitter">
+                          Save
+                        </Button>
+                      )}
+                      {isOwnProfile && (
+                        <>
+                          <Button size="sm" colorScheme="twitter" mr="2">
+                            Edit
+                          </Button>
+                          <Button
+                            size="sm"
+                            colorScheme="red"
+                            onClick={onDelHandelCilick}
+                          >
+                            Delete
+                          </Button>
+                        </>
+                      )}
                     </Flex>
                   </Flex>
                 </Flex>
