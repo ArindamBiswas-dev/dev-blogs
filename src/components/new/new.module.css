@@ -1,0 +1,15 @@
+.coverImageInput {
+  display: none;
+}
+
+.coverImageInputLabel {
+  background-color: #d4d7db;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.coverImageInputLabel:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
