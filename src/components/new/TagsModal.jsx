@@ -10,7 +10,7 @@ import React from 'react';
 import { tags } from '../Homepage/PageLayout/Tags';
 import TopicTag from './TopicTag';
 
-function TagsModal({ isOpen, onClose, postTags, setPostTags }) {
+function TagsModal({ isOpen, onClose }) {
   return (
     <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
@@ -19,12 +19,7 @@ function TagsModal({ isOpen, onClose, postTags, setPostTags }) {
         <ModalBody>
           <Flex wrap="wrap" gridGap="10px">
             {tags.map((tag) => (
-              <TopicTag
-                name={tag}
-                key={tag}
-                postTags={postTags}
-                setPostTags={setPostTags}
-              />
+              <TopicTag name={tag} key={tag} />
             ))}
           </Flex>
         </ModalBody>

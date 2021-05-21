@@ -2,12 +2,16 @@ import { Button } from '@chakra-ui/button';
 import { Image } from '@chakra-ui/image';
 import { Box, Flex } from '@chakra-ui/layout';
 import React from 'react';
+import { useContext } from 'react';
+import { PostContext } from './New';
 import styles from './new.module.css';
 
-function CoverImage({ coverImage, setCoverImage }) {
+function CoverImage() {
+  const postContext = useContext(PostContext);
+
   return (
     <Box>
-      {!coverImage && (
+      {!postContext.postState.coverImage && (
         <>
           <input
             className={styles.coverImageInput}
@@ -23,7 +27,7 @@ function CoverImage({ coverImage, setCoverImage }) {
           </label>
         </>
       )}
-      {coverImage && (
+      {postContext.postState.coverImage && (
         <Flex justify="space-between" align="center" wrap="wrap" maxW="400px">
           <Image
             src="https://picsum.photos/200/300"
@@ -34,7 +38,12 @@ function CoverImage({ coverImage, setCoverImage }) {
             borderRadius="md"
             mb="4"
           />
-          <Button colorScheme="red" onClick={() => setCoverImage('')}>
+          <Button
+            colorScheme="red"
+            onClick={() =>
+              postContext.postDispatch({ type: 'setCoverImage', value: '' })
+            }
+          >
             Remove
           </Button>
         </Flex>

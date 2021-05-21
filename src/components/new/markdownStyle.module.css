@@ -1,0 +1,93 @@
+.mdStyle {
+  font-size: 20px !important;
+  padding-top: 10px !important;
+}
+
+.mdStyle h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.mdStyle h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.mdStyle h3 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.mdStyle code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+}
+
+.mdStyle li {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.mdStyle a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.mdStyle pre code {
+  padding: 0 !important;
+}
+
+.mdStyle table {
+  border-spacing: 0px;
+  border: 1px solid rgb(155, 155, 155);
+}
+
+.mdStyle table tr {
+  border-top: 1px solid rgb(155, 155, 155);
+  border-collapse: collapse;
+}
+
+.mdStyle body table th {
+  background-color: rgb(211, 211, 211);
+  padding: 6px 13px;
+  border: 1px solid rgb(155, 155, 155);
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.mdStyle body table td {
+  padding: 6px 13px;
+  border: 1px solid rgb(155, 155, 155);
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.mdStyle blockquote {
+  padding-left: 10px;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+  margin: 0px;
+}
+
+.mdStyle p,
+.mdStyle h1,
+.mdStyle h2,
+.mdStyle h3,
+.mdStyle blockquote,
+.mdStyle code,
+.mdStyle ul,
+.mdStyle ol,
+.mdStyle pre,
+.mdStyle table {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.mdStyle ul,
+.mdStyle ol {
+  padding: 32px !important;
+}

@@ -2,23 +2,31 @@ import { Tag, TagLabel, TagRightIcon } from '@chakra-ui/tag';
 import React, { useState } from 'react';
 import { RiAddFill } from 'react-icons/ri';
 import { IoRemoveOutline } from 'react-icons/io5';
+import { useContext } from 'react';
+import { PostContext } from './New';
 
-function TopicTag({ postTags, name, setPostTags }) {
-  const initialVal = postTags.indexOf(name) > -1 ? true : false;
+function TopicTag({ name }) {
+  const postContext = useContext(PostContext);
+
+  const initialVal =
+    postContext.postState.postTags.indexOf(name) > -1 ? true : false;
+
   const [isInclude, setInclude] = useState(initialVal);
 
   const onSelect = () => {
     if (isInclude) {
-      const index = postTags.indexOf(name);
-      postTags.splice(index, 1);
-      setPostTags(postTags);
+      postContext.postDispatch({
+        type: 'removePostTags',
+        value: name,
+      });
     } else {
-      if (postTags.length === 4) return;
-      postTags.push(name);
+      if (postContext.postState.postTags.length === 4) return;
+      postContext.postDispatch({
+        type: 'setPostTags',
+        value: name,
+      });
     }
     setInclude(!isInclude);
-    // console.log(postTags);
-    // console.log(isInclude);
   };
 
   return (
