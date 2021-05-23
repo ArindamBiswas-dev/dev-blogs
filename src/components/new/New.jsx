@@ -51,15 +51,15 @@ function New() {
           width={{ base: '100%', md: '85%' }}
           maxW="1140px"
           py="5"
-          justify="space-between"
-          gridGap="10px"
+          justify="center"
+          gridGap="20px"
         >
-          <Box w={{ base: '100%', md: '70%' }}>
+          <Box w={{ base: '100%' }} maxW="900px">
             <Flex justify="flex-end">
               <Button
                 mx="2"
-                colorScheme="twitter"
                 size="sm"
+                colorScheme="twitter"
                 onClick={() => setEditMode(true)}
               >
                 Edit
@@ -91,14 +91,6 @@ function New() {
               )}
               {!isEditMode && <PreviewContent />}
             </Box>
-          </Box>
-          <Box
-            bgColor="lightblue"
-            w="30%"
-            maxW="240px"
-            d={{ base: 'none', md: 'block' }}
-          >
-            exp
           </Box>
         </Flex>
       </Flex>

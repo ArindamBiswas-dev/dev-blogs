@@ -9,6 +9,7 @@ import TagsModal from './TagsModal';
 import { useDisclosure } from '@chakra-ui/hooks';
 import { useContext } from 'react';
 import { PostContext } from './New';
+import GenerateImageLink from './GenerateImageLink';
 
 function Headers() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -60,6 +61,7 @@ function Headers() {
                 : 'Add Tags'}
             </Button>
           </Flex>
+          <GenerateImageLink />
         </Stack>
       </Box>
       <TagsModal isOpen={isOpen} onClose={onClose} />
