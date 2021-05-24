@@ -14,6 +14,7 @@ const initialState = {
   postContent: '',
   postTags: [],
 };
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'setCoverImage':
