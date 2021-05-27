@@ -7,7 +7,14 @@ import { VscGithub } from 'react-icons/vsc';
 
 function Footer() {
   return (
-    <Box px="3" py="4" bgColor="#d2d6db" d="flex" justifyContent="center">
+    <Box
+      px="3"
+      py="4"
+      bgColor="#d2d6db"
+      d="flex"
+      justifyContent="center"
+      pb={{ base: '90px', lg: '4' }}
+    >
       <Box w="90%" maxW="500px">
         <Flex mb="2" textAlign="center" wrap="wrap" justify="center">
           {footerLink.map((link) => {

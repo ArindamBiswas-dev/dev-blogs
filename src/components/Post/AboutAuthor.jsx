@@ -23,16 +23,16 @@ function AboutAuthor() {
   return (
     <Stack
       spacing="10px"
-      flexBasis={{ lg: '250px', xl: '300px' }}
-      ml="3"
+      flexBasis={{ base: '100%', lg: '250px', xl: '300px' }}
+      ml={{ lg: '3' }}
+      mt={{ base: '8', lg: '0' }}
       alignSelf="flex-start"
       borderRadius="md"
       overflow="hidden"
       pos="sticky"
-      top="90px"
-      d={{ base: 'none', lg: 'flex' }}
+      top={{ base: 'auto', lg: '90px' }}
     >
-      <Box d={{ base: 'none', lg: 'block' }}>
+      <Box>
         <Box h="30px" bgColor="blackAlpha.700"></Box>
         <Box
           px="3"

@@ -1,7 +1,8 @@
 import { Image } from '@chakra-ui/image';
-import { Box, Heading, Stack } from '@chakra-ui/layout';
+import { Box, Divider, Heading, Stack } from '@chakra-ui/layout';
 import React from 'react';
 import ContentInMD from '../new/ContentInMD';
+import CommmentSection from './CommmentSection';
 import PostAuthor from './PostAuthor';
 import Posttags from './Posttags';
 
@@ -30,6 +31,8 @@ function Postcontent() {
         <Box color="#424242">
           <ContentInMD postContent="{content} Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
         </Box>
+        <Divider />
+        <CommmentSection />
       </Stack>
     </Stack>
   );

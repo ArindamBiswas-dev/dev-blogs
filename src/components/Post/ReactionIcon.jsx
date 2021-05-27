@@ -4,7 +4,7 @@ import React from 'react';
 function ReactionIcon({ icon, count, color, onClickHandeler }) {
   return (
     <Box
-      my="3"
+      my="2"
       cursor="pointer"
       textAlign="center"
       color={color}
