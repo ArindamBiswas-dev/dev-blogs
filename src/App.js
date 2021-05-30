@@ -12,6 +12,7 @@ import Profile from './components/Profile/Profile';
 import Setting from './components/Setting/Setting';
 import New from './components/new/New';
 import Post from './components/Post/Post';
+import SearchResult from './components/Search/SearchResult';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route exact={true} path="/readinglist" component={ReadingList} />
           <Route exact={true} path="/setting" component={Setting} />
           <Route exact={true} path="/new" component={New} />
+          <Route exact={true} path="/search" component={SearchResult} />
           <Route exact={true} path="/:id/:id" component={Post} />
           <Route exact={true} path="/:id" component={Profile} />
         </Switch>

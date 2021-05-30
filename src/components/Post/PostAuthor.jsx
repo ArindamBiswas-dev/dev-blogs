@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function PostAuthor() {
   return (
     <Flex wrap="wrap" align="baseline">
-      <Link>
+      <Link to="/">
         <Image
           alt="profile_image"
           src="https://bit.ly/prosper-baba"

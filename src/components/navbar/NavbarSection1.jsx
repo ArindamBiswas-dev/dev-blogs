@@ -1,7 +1,7 @@
-import { Input } from '@chakra-ui/input';
-import { Flex, Heading } from '@chakra-ui/layout';
+import { Box, Flex, Heading } from '@chakra-ui/layout';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchInput from './SearchInput';
 
 function NavbarSection1() {
   return (
@@ -17,21 +17,9 @@ function NavbarSection1() {
           DEVBLOGS
         </Heading>
       </Link>
-      <Input
-        ml="4"
-        w="350px"
-        size="lg"
-        placeholder="Search..."
-        borderColor="black"
-        outline="0"
-        transition="cubic-bezier(0.17, 0.67, 0.5, 0.71)"
-        _hover={{ borderColor: 'black' }}
-        _focus={{
-          borderColor: 'blue',
-          boxShadow: '2px 2px 0 blue',
-        }}
-        display={{ base: 'none', md: 'block' }}
-      />
+      <Box display={{ base: 'none', md: 'block' }} ml="4" w="350px">
+        <SearchInput />
+      </Box>
     </Flex>
   );
 }

@@ -60,7 +60,7 @@ function AboutAuthor() {
               </Button>
             </Link>
             {datas.map((data) => (
-              <Box>
+              <Box key={data.title}>
                 <Text color="gray.500" fontWeight="bold" fontSize="sm">
                   {data.title}
                 </Text>
