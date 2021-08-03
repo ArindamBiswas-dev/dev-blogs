@@ -7,11 +7,35 @@ import { Link } from 'react-router-dom';
 import { TiHeartOutline } from 'react-icons/ti';
 import { AiOutlineComment } from 'react-icons/ai';
 import { Button, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+import { useQuery } from 'react-query';
+import axios from 'axios';
+
+async function fetchFeedData(post_id) {
+  const result = await axios.get(`http://localhost:8000/posttags/${post_id}`);
+  console.log(result.data.data);
+  return result.data.data;
+}
 
 function Post(props) {
   const fakeTags = ['webdev', 'javascript', 'react', 'sql'];
   const [isFakeLoading, setLoading] = useState(!false);
-  const { isFirst, isOwnProfile, onDeleteClick, setTargetId, fakeId } = props;
+  const {
+    isFirst,
+    isOwnProfile,
+    onDeleteClick,
+    setTargetId,
+    fakeId,
+    post_data,
+  } = props;
+  const { post_id } = post_data.post_id;
+
+  const { isLoading, error, data } = useQuery(
+    `feedData`,
+    fetchFeedData(post_id),
+    {
+      keepPreviousData: true,
+    }
+  );
 
   // on delete click set the target id and call the alert modal
   const onDelHandelCilick = () => {
@@ -43,16 +67,12 @@ function Post(props) {
         <Stack spacing="10px">
           <Flex>
             <SkeletonCircle size={10} isLoaded={isFakeLoading}>
-              <Avatar
-                size="md"
-                name="Kent Dodds"
-                src="https://bit.ly/kent-c-dodds"
-              />
+              <Avatar size="md" name={post_data.name} src={post_data.avater} />
             </SkeletonCircle>
             <Box ml="4" mt="1">
               <SkeletonText noOfLines={2} mt={1} isLoaded={isFakeLoading}>
-                <Heading size="sm">Kent Dodds</Heading>
-                <Text fontSize="sm">May 4</Text>
+                <Heading size="sm">{post_data.name}</Heading>
+                <Text fontSize="sm">{post_data.created_at}</Text>
               </SkeletonText>
             </Box>
           </Flex>
@@ -62,7 +82,7 @@ function Post(props) {
               <Stack spacing="15px" ml={{ md: '14' }}>
                 <Link to="/nextjs intro">
                   <FluidHeading _hover={{ color: 'blue' }}>
-                    Introduction to NextJS
+                    {post_data.title}
                   </FluidHeading>
                 </Link>
 

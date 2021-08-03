@@ -8,12 +8,28 @@ import {
   MenuItem,
   MenuList,
 } from '@chakra-ui/menu';
-import React from 'react';
+import React, { useState } from 'react';
 import FluidText from '../global/FluidText';
 import { BiSearch } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import { useDisclosure } from '@chakra-ui/react';
+import SocialSignInButton from '../global/SocialSignInButton';
 
 function NavbarSection2() {
+  const [User, setUser] = useState(); // dummy user
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  if (!User) {
+    return (
+      <>
+        <Button colorScheme="blue" onClick={onOpen}>
+          Sign In
+        </Button>
+        <SocialSignInButton onClose={onClose} isOpen={isOpen} />
+      </>
+    );
+  }
+
   return (
     <Flex align="center">
       <Link to="/new">

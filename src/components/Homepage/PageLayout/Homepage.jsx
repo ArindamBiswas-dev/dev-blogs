@@ -4,8 +4,8 @@ import Post from './Post';
 import PostNavSection from './PostNavSection';
 import Tagsection from './Tagsection';
 
-function Homepage(props) {
-  const { parent } = props;
+function Homepage({ props, posts = [], parent }) {
+  console.log(posts);
   return (
     <Box d="flex" w="100%" justifyContent="center">
       <Box width={{ base: '90%', md: '85%' }} maxW="1140px" py="5">
@@ -14,16 +14,9 @@ function Homepage(props) {
           <Box w="100%">
             <PostNavSection parent={parent} />
             <Stack spacing="15px" ml={{ md: '3' }}>
-              <Post isFirst={true} />
-              <Post />
-              <Post />
-              <Post />
-              <Post />
-              <Post />
-              <Post />
-              <Post />
-              <Post />
-              <Post />
+              {posts.map((post) => (
+                <Post key={post.title} post_data={post} />
+              ))}
             </Stack>
           </Box>
         </Flex>

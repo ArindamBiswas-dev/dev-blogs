@@ -13,27 +13,31 @@ import Setting from './components/Setting/Setting';
 import New from './components/new/New';
 import Post from './components/Post/Post';
 import SearchResult from './components/Search/SearchResult';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 function App() {
+  const queryClient = new QueryClient();
   return (
-    <div className="App">
-      <Layout>
-        <Switch>
-          <Route exact={true} path="/" component={Feed} />
-          <Route exact={true} path="/top/week" component={Week} />
-          <Route exact={true} path="/top/month" component={Month} />
-          <Route exact={true} path="/top/year" component={Year} />
-          <Route exact={true} path="/top/infinity" component={TopInfinity} />
-          <Route exact={true} path="/latest" component={Latest} />
-          <Route exact={true} path="/readinglist" component={ReadingList} />
-          <Route exact={true} path="/setting" component={Setting} />
-          <Route exact={true} path="/new" component={New} />
-          <Route exact={true} path="/search" component={SearchResult} />
-          <Route exact={true} path="/:id/:id" component={Post} />
-          <Route exact={true} path="/:id" component={Profile} />
-        </Switch>
-      </Layout>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <Layout>
+          <Switch>
+            <Route exact={true} path="/" component={Feed} />
+            <Route exact={true} path="/top/week" component={Week} />
+            <Route exact={true} path="/top/month" component={Month} />
+            <Route exact={true} path="/top/year" component={Year} />
+            <Route exact={true} path="/top/infinity" component={TopInfinity} />
+            <Route exact={true} path="/latest" component={Latest} />
+            <Route exact={true} path="/readinglist" component={ReadingList} />
+            <Route exact={true} path="/setting" component={Setting} />
+            <Route exact={true} path="/new" component={New} />
+            <Route exact={true} path="/search" component={SearchResult} />
+            <Route exact={true} path="/:id/:id" component={Post} />
+            <Route exact={true} path="/:id" component={Profile} />
+          </Switch>
+        </Layout>
+      </div>
+    </QueryClientProvider>
   );
 }
 
